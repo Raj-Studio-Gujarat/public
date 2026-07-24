@@ -47,8 +47,8 @@ export default function AboutPage() {
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-bg-alt">
               <Image
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=70"
-                alt="Raj Studio at work during a Gujarati wedding"
+                src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?auto=format&fit=crop&w=900&q=70"
+                alt="Raj Studio covering a Hindu wedding mandap ceremony"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
