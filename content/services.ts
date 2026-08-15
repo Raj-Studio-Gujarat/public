@@ -186,7 +186,7 @@ export const homeServiceCards = [
     blurb:
       "Family portraits, headshots, maternity and newborn — controlled light in-house.",
     href: "/services#studio",
-    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=70",
+    img: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=70",
   },
   {
     n: "02",
@@ -195,7 +195,7 @@ export const homeServiceCards = [
     blurb:
       "Full-day Gujarati wedding coverage — pheras, rituals, portraits, reception.",
     href: "/services#weddings",
-    img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=70",
+    img: "https://images.unsplash.com/photo-1587271636175-90d58cdad458?auto=format&fit=crop&w=900&q=70",
   },
   {
     n: "03",
@@ -203,7 +203,7 @@ export const homeServiceCards = [
     frame: "EVT",
     blurb: "Birthdays, sangeets, corporate stage and celebration coverage.",
     href: "/services#events",
-    img: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=70",
+    img: "https://images.unsplash.com/photo-1744804298612-fa9f2ef0e125?auto=format&fit=crop&w=900&q=70",
   },
   {
     n: "04",
@@ -211,6 +211,6 @@ export const homeServiceCards = [
     frame: "VID",
     blurb: "Cinematic wedding films, event highlights, brand and product video.",
     href: "/services#video",
-    img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=70",
+    img: "https://images.unsplash.com/photo-1543359905-c5d15c3a23dd?auto=format&fit=crop&w=900&q=70",
   },
 ] as const;

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Reveal } from "@/components/sections/Reveal";
 import { CTALink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -26,7 +27,10 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-line">
       <Container className="grid gap-10 py-16 md:grid-cols-12 md:gap-8 md:py-24 lg:py-32">
-        <div className="flex flex-col justify-center md:col-span-6 lg:col-span-5">
+        <Reveal
+          immediate
+          className="flex flex-col justify-center md:col-span-6 lg:col-span-5"
+        >
           <Eyebrow>01 — Raj Studio, Gujarat</Eyebrow>
           <h1 className="mt-6 font-display text-4xl leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
             Photographs that hold up on the wall,
@@ -54,7 +58,7 @@ export function Hero() {
             <div className="h-px flex-1 bg-line" />
             <FrameLabel>Est. Ahmedabad</FrameLabel>
           </div>
-        </div>
+        </Reveal>
 
         <div className="relative md:col-span-6 lg:col-span-7">
           <div className="relative aspect-[4/5] w-full overflow-hidden bg-bg-alt md:aspect-[3/4]">
