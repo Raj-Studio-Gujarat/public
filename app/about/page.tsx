@@ -1,8 +1,9 @@
-import Image from "next/image";
 import { CTASection } from "@/components/sections/CTASection";
+import { Reveal, REVEAL_STAGGER } from "@/components/sections/Reveal";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FrameLabel } from "@/components/ui/FrameLabel";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { branches } from "@/content/locations";
 import { buildMetadata } from "@/lib/seo";
 
@@ -25,7 +26,7 @@ export default function AboutPage() {
     <>
       <Container className="py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-7">
+          <Reveal immediate className="md:col-span-7">
             <Eyebrow>About — Raj Studio</Eyebrow>
             <h1 className="mt-4 font-display text-4xl leading-[1.05] md:text-6xl">
               A small team, a{" "}
@@ -43,10 +44,10 @@ export default function AboutPage() {
               years — not scrolled past. That guides every decision, from how we
               light a portrait to how we edit a wedding gallery.
             </p>
-          </div>
-          <div className="md:col-span-5">
+          </Reveal>
+          <Reveal delay={0.08} className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-bg-alt">
-              <Image
+              <LazyImage
                 src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?auto=format&fit=crop&w=900&q=70"
                 alt="Raj Studio covering a Hindu wedding mandap ceremony"
                 fill
@@ -57,20 +58,24 @@ export default function AboutPage() {
                 <FrameLabel variant="overlay">STUDIO — 001</FrameLabel>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
 
       <section className="border-y border-line bg-bg-alt py-16">
         <Container>
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-            {numbers.map((item) => (
-              <div key={item.label} className="border-l border-line pl-6">
-                <div className="font-display text-4xl md:text-5xl">{item.n}</div>
-                <div className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-ink-soft">
-                  {item.label}
+            {numbers.map((item, index) => (
+              <Reveal key={item.label} delay={index * REVEAL_STAGGER}>
+                <div className="border-l border-line pl-6">
+                  <div className="font-display text-4xl md:text-5xl">
+                    {item.n}
+                  </div>
+                  <div className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-ink-soft">
+                    {item.label}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </Container>
@@ -78,19 +83,25 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-28">
         <Container>
-          <Eyebrow>Where to find us</Eyebrow>
-          <h2 className="mt-3 font-display text-3xl md:text-4xl">
-            Three branches, Ahmedabad
-          </h2>
+          <Reveal>
+            <Eyebrow>Where to find us</Eyebrow>
+            <h2 className="mt-3 font-display text-3xl md:text-4xl">
+              Three branches, Ahmedabad
+            </h2>
+          </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {branches.map((branch) => (
-              <div key={branch.id} className="border-t border-line pt-6">
-                <FrameLabel>
-                  Branch {String(branch.id).padStart(2, "0")}
-                </FrameLabel>
-                <div className="mt-3 font-display text-2xl">{branch.label}</div>
-                <p className="mt-3 text-sm text-ink-soft">{branch.address}</p>
-              </div>
+            {branches.map((branch, index) => (
+              <Reveal key={branch.id} delay={index * REVEAL_STAGGER}>
+                <div className="border-t border-line pt-6">
+                  <FrameLabel>
+                    Branch {String(branch.id).padStart(2, "0")}
+                  </FrameLabel>
+                  <div className="mt-3 font-display text-2xl">
+                    {branch.label}
+                  </div>
+                  <p className="mt-3 text-sm text-ink-soft">{branch.address}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </Container>

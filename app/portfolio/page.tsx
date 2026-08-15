@@ -1,5 +1,6 @@
 import { CTASection } from "@/components/sections/CTASection";
 import { PortfolioGrid } from "@/components/sections/PortfolioGrid";
+import { Reveal } from "@/components/sections/Reveal";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { buildMetadata } from "@/lib/seo";
@@ -15,15 +16,17 @@ export default function PortfolioPage() {
   return (
     <>
       <Container className="pt-16 md:pt-24">
-        <Eyebrow>Contact Sheet — 24 frames</Eyebrow>
-        <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] md:text-6xl">
-          Every frame we keep, filed like a{" "}
-          <span className="italic text-accent">contact sheet</span>.
-        </h1>
-        <p className="mt-6 max-w-2xl text-ink-soft">
-          Browse recent work from weddings, studio sessions, events and
-          cinematic video. Tap a frame to see it larger.
-        </p>
+        <Reveal immediate>
+          <Eyebrow>Contact Sheet — 24 frames</Eyebrow>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] md:text-6xl">
+            Every frame we keep, filed like a{" "}
+            <span className="italic text-accent">contact sheet</span>.
+          </h1>
+          <p className="mt-6 max-w-2xl text-ink-soft">
+            Browse recent work from weddings, studio sessions, events and
+            cinematic video. Tap a frame to see it larger.
+          </p>
+        </Reveal>
       </Container>
       <div className="mt-16">
         <PortfolioGrid

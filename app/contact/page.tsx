@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/sections/ContactForm";
+import { Reveal } from "@/components/sections/Reveal";
 import { CTALink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -30,7 +31,7 @@ export default function ContactPage() {
 
       <Container className="py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <Reveal immediate className="md:col-span-5">
             <Eyebrow>Contact — Raj Studio</Eyebrow>
             <h1 className="mt-4 font-display text-4xl leading-[1.05] md:text-5xl">
               Send a note.{" "}
@@ -78,11 +79,11 @@ export default function ContactPage() {
                 </ul>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="md:col-span-7">
+          <Reveal delay={0.08} className="md:col-span-7">
             <ContactForm />
-          </div>
+          </Reveal>
         </div>
       </Container>
     </>

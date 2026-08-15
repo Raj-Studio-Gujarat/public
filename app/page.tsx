@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { PortfolioGrid } from "@/components/sections/PortfolioGrid";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Reveal } from "@/components/ui/Reveal";
 import { getLocalBusinessJsonLd } from "@/lib/jsonld";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -22,16 +23,26 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Hero />
-      <ServiceCards />
-      <PortfolioGrid
-        heading="Selected work"
-        eyebrow="03 — Portfolio"
-        limit={12}
-        showFilters={false}
-      />
-      <Testimonials />
-      <CTASection />
+      <Reveal>
+        <Hero />
+      </Reveal>
+      <Reveal>
+        <ServiceCards />
+      </Reveal>
+      <Reveal>
+        <PortfolioGrid
+          heading="Selected work"
+          eyebrow="03 — Portfolio"
+          limit={12}
+          showFilters={false}
+        />
+      </Reveal>
+      <Reveal>
+        <Testimonials />
+      </Reveal>
+      <Reveal>
+        <CTASection />
+      </Reveal>
     </>
   );
 }
