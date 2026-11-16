@@ -348,22 +348,22 @@ export const portfolioItems: PortfolioItem[] = [
 
 export const heroImages = [
   {
-    src: img("shot-11.jpg"),
-    alt: "Selected photography by Raj Studio",
+    src: img("wedding-09.jpg"),
+    alt: "Wedding couple portrait by Raj Studio",
     frameLabel: "01/04",
   },
   {
-    src: img("shot-30.jpg"),
-    alt: "Cinematic frame by Raj Studio",
+    src: img("studio-04.webp"),
+    alt: "Studio portrait by Raj Studio",
     frameLabel: "02/04",
   },
   {
-    src: img("wedding-02.jpg"),
-    alt: "Wedding photography by Raj Studio",
+    src: img("shot-09.jpg"),
+    alt: "Wedding couple candid by Raj Studio",
     frameLabel: "03/04",
   },
   {
-    src: img("pre-wedding-02.jpg"),
+    src: img("pre-wedding-01.jpg"),
     alt: "Pre-wedding session by Raj Studio",
     frameLabel: "04/04",
   },
