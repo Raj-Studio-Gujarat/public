@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline:
     "Photography and video for weddings, studio work, and events across Gujarat.",
   description:
-    "Raj Studio shoots weddings, studio portraits, events and cinematic video across Gujarat. Three Ahmedabad branches. Enquire on WhatsApp.",
+    "Raj Studio shoots weddings, studio portraits, events and cinematic video across Gujarat. Based in Maninagar, Ahmedabad. Enquire on WhatsApp.",
   phoneDisplay: "+91 78746 44411",
   phoneTel: "+917874644411",
   email: null as string | null,

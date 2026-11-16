@@ -38,7 +38,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 max-w-lg text-base text-ink-soft">
             Weddings, studio portraits, events and video across Ahmedabad and
-            greater Gujarat. Three branches, one team, decades behind the lens.
+            greater Gujarat. One studio in Maninagar, decades behind the lens.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <CTALink href="/contact" variant="primary">
@@ -69,6 +69,7 @@ export function Hero() {
                 alt={image.alt}
                 fill
                 priority={i === 0}
+                quality={75}
                 sizes="(max-width: 768px) 100vw, 55vw"
                 className="object-cover transition-opacity duration-1000"
                 style={{ opacity: i === idx ? 1 : 0 }}

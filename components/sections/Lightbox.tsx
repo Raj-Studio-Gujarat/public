@@ -91,6 +91,7 @@ export function Lightbox({ items, index, onClose, onChange }: LightboxProps) {
             alt={item.alt}
             fill
             sizes="90vw"
+            quality={80}
             className="object-contain"
             priority
           />

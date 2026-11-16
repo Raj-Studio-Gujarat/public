@@ -34,7 +34,6 @@ export default function HomePage() {
           heading="Selected work"
           eyebrow="03 — Portfolio"
           limit={12}
-          showFilters={false}
         />
       </Reveal>
       <Reveal>

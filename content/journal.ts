@@ -17,21 +17,21 @@ export const journalPosts: JournalPost[] = [
     category: "Weddings",
     body: [
       "Ahmedabad weddings often move between home, mandap, and hall in a single day. We start with a timeline on WhatsApp, then assign photographers to the moments that cannot be restaged.",
-      "Our Maninagar, Ramol, and Ghodasar branches give the team nearby kit-check points before late functions.",
+      "Our Maninagar studio is the base for kit checks before late functions across the city.",
       "If your date is fixed, send venues and function list — we will reply with a coverage plan and quote.",
     ],
   },
   {
-    slug: "ghodasar-studio-family-session",
-    title: "Family sessions at our Ghodasar studio",
+    slug: "maninagar-studio-family-session",
+    title: "Family sessions at our Maninagar studio",
     excerpt:
-      "What to expect from a portrait or family album shoot at Shop No.1, Dhwani Flat on Cadila Road.",
+      "What to expect from a portrait or family album shoot at our Maninagar East studio.",
     date: "2026-01-28",
     category: "Studio",
     body: [
-      "The Ghodasar studio is set up for family groups, couple portraits, and small product shoots. Cadila Road access makes parking straightforward.",
+      "The Maninagar studio is set up for family groups, couple portraits, and small product shoots.",
       "Sessions usually run sixty to ninety minutes. We deliver an edited gallery online; prints can be ordered separately.",
-      "To book a slot, send your preferred date on WhatsApp — Maninagar and Ramol branches are available too.",
+      "To book a slot, send your preferred date on WhatsApp.",
     ],
   },
 ];

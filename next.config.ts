@@ -2,12 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    formats: ["image/avif", "image/webp"],
+    qualities: [75, 80],
   },
   async headers() {
     return [
@@ -40,9 +36,9 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob: https://images.unsplash.com",
+              "img-src 'self' data: blob:",
               "font-src 'self' data:",
-              "connect-src 'self' https://images.unsplash.com",
+              "connect-src 'self'",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self' https://wa.me https://api.whatsapp.com",
