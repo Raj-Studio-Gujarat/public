@@ -9,23 +9,14 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FrameLabel } from "@/components/ui/FrameLabel";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { StaggerGrid, StaggerItem } from "@/components/ui/StaggerGrid";
-import {
-  categoryLabels,
-  portfolioItems,
-  type PortfolioCategory,
-  type PortfolioItem,
-} from "@/content/portfolio";
+import { portfolioItems, type PortfolioItem } from "@/content/portfolio";
 import { cn } from "@/lib/utils";
-
-type Filter = PortfolioCategory | "all";
 
 type PortfolioGridProps = {
   items?: PortfolioItem[];
   limit?: number;
   heading?: string;
   eyebrow?: string;
-  showFilters?: boolean;
-  initialCategory?: Filter;
   asSection?: boolean;
 };
 
@@ -34,61 +25,21 @@ export function PortfolioGrid({
   limit,
   heading = "Selected work",
   eyebrow = "03 — Portfolio",
-  showFilters = true,
-  initialCategory = "all",
   asSection = true,
 }: PortfolioGridProps) {
-  const [filter, setFilter] = useState<Filter>(initialCategory);
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
-  const shots = useMemo(() => {
-    const list =
-      filter === "all" ? items : items.filter((shot) => shot.category === filter);
-    return limit ? list.slice(0, limit) : list;
-  }, [filter, items, limit]);
-
-  const filters: Filter[] = [
-    "all",
-    "wedding",
-    "pre-wedding",
-    "studio",
-    "events",
-    "video",
-  ];
+  const shots = useMemo(
+    () => (limit ? items.slice(0, limit) : items),
+    [items, limit]
+  );
 
   const content = (
     <Container>
       <Reveal>
-        <div className="flex flex-col gap-6 border-b border-line pb-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <Eyebrow>{eyebrow}</Eyebrow>
-            <h2 className="mt-3 font-display text-3xl md:text-4xl">{heading}</h2>
-          </div>
-          {showFilters ? (
-            <div
-              className="flex flex-wrap gap-2"
-              role="tablist"
-              aria-label="Portfolio categories"
-            >
-              {filters.map((value) => (
-                <button
-                  key={value}
-                  type="button"
-                  role="tab"
-                  aria-selected={filter === value}
-                  onClick={() => setFilter(value)}
-                  className={cn(
-                    "border px-3 py-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] transition-colors duration-200",
-                    filter === value
-                      ? "border-ink bg-ink text-background"
-                      : "border-line text-ink-soft hover:border-ink hover:text-ink"
-                  )}
-                >
-                  {categoryLabels[value]}
-                </button>
-              ))}
-            </div>
-          ) : null}
+        <div className="border-b border-line pb-6">
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <h2 className="mt-3 font-display text-3xl md:text-4xl">{heading}</h2>
         </div>
       </Reveal>
 
@@ -97,7 +48,7 @@ export function PortfolioGrid({
           {shots.map((shot, index) => {
             const wide = index % 7 === 3;
             return (
-              <StaggerItem key={`${filter}-${shot.id}`}>
+              <StaggerItem key={shot.id}>
                 <Reveal delay={Math.min(index, 8) * REVEAL_STAGGER}>
                   <button
                     type="button"

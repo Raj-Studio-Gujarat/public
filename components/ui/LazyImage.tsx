@@ -18,6 +18,7 @@ export function LazyImage({
   className,
   fadeIn = true,
   priority,
+  quality = 75,
   alt,
   ...props
 }: LazyImageProps) {
@@ -30,6 +31,7 @@ export function LazyImage({
     <Image
       alt={alt}
       priority={priority}
+      quality={quality}
       loading={priority ? undefined : "lazy"}
       onLoad={() => setLoaded(true)}
       className={cn(

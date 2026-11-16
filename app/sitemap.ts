@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { categoryLabels } from "@/content/portfolio";
 import { journalPosts } from "@/content/journal";
 import { siteConfig } from "@/lib/site";
 
@@ -22,15 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const portfolioCategories: MetadataRoute.Sitemap = Object.keys(categoryLabels)
-    .filter((category) => category !== "all")
-    .map((category) => ({
-      url: `${base}/portfolio/${category}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    }));
-
   const journal: MetadataRoute.Sitemap = journalPosts.map((post) => ({
     url: `${base}/journal/${post.slug}`,
     lastModified: new Date(post.date),
@@ -38,5 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...portfolioCategories, ...journal];
+  return [...staticRoutes, ...journal];
 }

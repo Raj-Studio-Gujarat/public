@@ -31,12 +31,12 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-2">
-          <Eyebrow>Branches — Ahmedabad</Eyebrow>
+          <Eyebrow>Studio — Ahmedabad</Eyebrow>
           <ul className="mt-4 space-y-3 text-sm text-ink-soft">
             {branches.map((branch) => (
               <li key={branch.id}>
                 <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-ink">
-                  {String(branch.id).padStart(2, "0")} — {branch.label}
+                  01 — {branch.label}
                 </span>
                 <div className="mt-1">{branch.address}</div>
               </li>
